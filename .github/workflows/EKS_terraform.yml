@@ -54,21 +54,21 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: |
-        cd JenkinsEc2Server
+        cd EKS
         terraform init
 
   
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       run: |
-        cd JenkinsEc2Server
+        cd EKS
         terraform plan
 
       # On push to "main", build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply/destroy 
       run: |
-       cd JenkinsEc2Server
+       cd EKS
        terraform destroy -auto-approve
 
     - name: Commit Repository File
@@ -76,13 +76,6 @@ jobs:
       with:
           operation: upload
           location: repository
-          directory: JenkinsEc2Server
+          directory: EKS
 
-    - name: EKS configurations
-      run: |
-       cd 
-
-dir('EKS/ConfigurationFiles') {
-                        sh 'aws eks update-kubeconfig --name my-eks-cluster'
-                        sh 'kubectl apply -f deployment.yaml'
-                        sh 'kubectl apply -f service.yaml'
+  
