@@ -69,7 +69,7 @@ jobs:
     - name: Terraform Apply/destroy 
       run: |
        cd EKS
-       terraform destroy -auto-approve
+       terraform apply -auto-approve
 
     - name: Commit Repository File
       uses: badgerhobbs/terraform-state@v2
