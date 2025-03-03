@@ -1,7 +1,7 @@
 
 # Kubenewrepo
 
-#    cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+#   cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
 name: 'Terraform'
 
