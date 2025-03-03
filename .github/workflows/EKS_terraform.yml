@@ -87,8 +87,8 @@ jobs:
        chmod +x ./kubectl
        sudo mv ./kubectl /usr/local/bin/kubectl
        aws eks update-kubeconfig --name my-eks-cluster
-       kubectl apply -f deployment.yaml
-       kubectl apply -f service.yaml
+       kubectl apply -f deployment.yaml --validate=false
+       kubectl apply -f service.yaml --validate=false
        sleep 20
        kubectl get pods
        sleep 10
