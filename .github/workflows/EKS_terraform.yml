@@ -78,7 +78,7 @@ jobs:
           location: repository
           directory: EKS
 
-    - name: Terraform Apply/destroy 
+    - name: Terraform accessnoded  
       run: |
        cd EKS
        cd ConfigurationFiles
