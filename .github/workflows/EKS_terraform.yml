@@ -88,6 +88,7 @@ jobs:
        sudo mv ./kubectl /usr/local/bin/kubectl
        kubectl version --client
        aws --version
+       aws sts get-caller-identity
        aws eks update-kubeconfig --name my-eks-cluster --region us-east-1
        #kubectl apply -f https://k8s.io/examples/application/deployment.yaml --validate=false
        #kubectl expose deployment nginx-deployment --type=NodePort --name=nginxservice
