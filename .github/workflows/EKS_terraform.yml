@@ -97,3 +97,5 @@ jobs:
        sleep 20
        kubectl get nodes
        sleep 10
+       kubectl get pods
+       sleep 10
