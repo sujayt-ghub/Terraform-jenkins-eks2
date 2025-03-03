@@ -87,10 +87,10 @@ jobs:
        chmod +x ./kubectl
        sudo mv ./kubectl /usr/local/bin/kubectl
        aws eks update-kubeconfig --name my-eks-cluster
-       kubectl apply -f https://k8s.io/examples/application/deployment.yaml --validate=false
-       kubectl expose deployment nginx-deployment --type=NodePort --name=nginxservice
+       #kubectl apply -f https://k8s.io/examples/application/deployment.yaml --validate=false
+       #kubectl expose deployment nginx-deployment --type=NodePort --name=nginxservice
        #kubectl apply -f deployment.yaml --validate=false
        #kubectl apply -f service.yaml --validate=false
        sleep 20
-       kubectl get pods
+       kubectl get nodes
        sleep 10
