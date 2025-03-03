@@ -83,14 +83,9 @@ jobs:
        cd EKS
        cd ConfigurationFiles
        sudo apt-get update
-       sudo apt-get install -y apt-transport-https ca-certificates curl gpg
-       # If the directory `/etc/apt/keyrings` does not exist, it should be created before the curl command, read the note below.
-       sudo mkdir -p -m 755 /etc/apt/keyrings
-       curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.32/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-       # This overwrites any existing configuration in /etc/apt/sources.list.d/kubernetes.list
-       echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.32/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
-       sudo apt-get update -y
-       sudo apt-get install -y kubectl
+       curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+       chmod +x ./kubectl
+       sudo mv ./kubectl /usr/local/bin/kubectl
        aws eks update-kubeconfig --name my-eks-cluster
        kubectl apply -f deployment.yaml
        kubectl apply -f service.yaml
