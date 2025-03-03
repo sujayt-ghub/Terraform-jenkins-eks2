@@ -86,6 +86,7 @@ jobs:
        curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
        chmod +x ./kubectl
        sudo mv ./kubectl /usr/local/bin/kubectl
+       kubectl version --client
        aws eks update-kubeconfig --name my-eks-cluster --region us-east-1
        #kubectl apply -f https://k8s.io/examples/application/deployment.yaml --validate=false
        #kubectl expose deployment nginx-deployment --type=NodePort --name=nginxservice
