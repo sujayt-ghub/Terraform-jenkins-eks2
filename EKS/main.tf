@@ -57,23 +57,12 @@ module "eks" {
 }
 
 
-resource "aws_eks_access_entry" "my_access_entry" {
-
-  cluster_name = "my-eks-cluster"
-
+/*resource "aws_eks_access_policy_association" "access-policy" {
+  cluster_name  = "my-eks-cluster"
+  policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
   principal_arn = "arn:aws:iam::418556709236:user/terraformuser"
 
-
-
-  # Optional fields:
-
-  #  - "read-only" for read-only access
-
-  #  - "write" for read-write access
-
-  #  - "full-access" for full administrative access
-
-  # role_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterFullAccess"
-  #policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterFullAccess"
-
-}
+  access_scope {
+    type       = "cluster"
+  }
+}*/
