@@ -73,6 +73,7 @@ resource "aws_eks_access_entry" "my_access_entry" {
 
   #  - "full-access" for full administrative access
 
-  role_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterFullAccess"
+  # role_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterFullAccess"
+  #policy_arn = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterFullAccess"
 
 }
