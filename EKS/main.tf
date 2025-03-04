@@ -1,4 +1,4 @@
-/*module "vpc" {
+module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
   name = "jenkins-vpc"
@@ -54,10 +54,10 @@ module "eks" {
     Environment = "dev"
     Terraform   = "true"
   }
-}*/
+}
 
 
-resource "aws_eks_access_policy_association" "access-policy" {
+/*resource "aws_eks_access_policy_association" "access-policy" {
   cluster_name  = "my-eks-cluster"
   policy_arn    = "arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy"
   principal_arn = "arn:aws:iam::418556709236:user/terraformuser"
@@ -65,4 +65,4 @@ resource "aws_eks_access_policy_association" "access-policy" {
   access_scope {
     type       = "cluster"
   }
-}
+}*/
