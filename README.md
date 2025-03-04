@@ -1,2 +1,2 @@
-# terraform-GitActions-eks
-Deploying EKS Cluster using Terraform , GitActions and Jenkins
+# terraform-GithubActions-eks
+Deploying EKS Cluster using Terraform , GithubActions and Jenkins
