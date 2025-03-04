@@ -55,3 +55,24 @@ module "eks" {
     Terraform   = "true"
   }
 }
+
+
+resource "aws_eks_access_entry" "my_access_entry" {
+
+  cluster_name = "my-eks-cluster"
+
+  principal_arn = "arn:aws:iam::418556709236:user/terraformuser"
+
+
+
+  # Optional fields:
+
+  #  - "read-only" for read-only access
+
+  #  - "write" for read-write access
+
+  #  - "full-access" for full administrative access
+
+  role_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterFullAccess"
+
+}
