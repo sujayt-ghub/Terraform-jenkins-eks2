@@ -93,6 +93,7 @@ jobs:
        aws eks update-kubeconfig --name my-eks-cluster --region us-east-1
        #kubectl apply -f https://k8s.io/examples/application/deployment.yaml --validate=false
        #kubectl expose deployment nginx-deployment --type=NodePort --name=nginxservice
+       #As per this script, adding eks access entries is not included so once eks and its nodes successfully created , we need to manual create access entry for eks cluster to grant access, only then we will get access on eks nodes for read or write Actions.
        kubectl delete -f deployment.yaml
        kubectl delete -f service.yaml
        sleep 20
